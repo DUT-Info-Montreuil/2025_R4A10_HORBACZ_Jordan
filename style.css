@@ -12,6 +12,69 @@
   font-weight: bold;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  border: solid;
+  padding: 10px 5%;
+  position: relative;
+}
+
+main {
+  margin: 5%;
+  margin-top: 0;
+}
+
+footer {
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: solid;
+  padding: 2%;
+}
+
+.hyperlien_header {
+  padding: 2%;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.card_image {
+  width: 100%;
+  height: 50%;
+}
+
+#lien_header {
+  padding-left: 70%;
+}
+
+br {
+  margin-bottom: 5%;
+}
+
+#menu-btn {
+  display: none;
+}
+
 @media screen and (width >= 600px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -24,56 +87,58 @@
   }
 }
 
-/** A partir de 2000px de large, mon style ne sera plus géré
-et on reviendra au style précédent */
+/** A partir de 2000px de large, retour au style précédent */
 @media screen and (width >= 1200px) and (width < 2000px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-body {
-  padding: 0;
-  margin: 0;
-}
-header{
-  display: flex;
-  font-weight: bold;
-  border: solid;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-main {
-  margin: 5%;
-  margin-top: 0;
-}
-footer{
-  font-weight: bold;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr) ;
-  border: solid;
-  padding: 2%;
-}
-.hyperlien_header{
-  padding: 2%;
-}
-img {
-  width : 150px;
-  height : 150px;
-}
-a{
-  color: black;
-  text-decoration: none;
-}
-ul{
-  list-style-type: none;
-}
-.card_image {
-  width : 100%;
-  height : 50%;
-}
-#lien_header{
-  padding-left: 70%;
-}
-br{
-  margin-bottom: 5%;
+
+@media screen and (max-width: 767px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  footer ul {
+    padding: 0;
+  }
+
+  #menu-btn {
+    display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  #lien_header {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    text-align: center;
+    border-top: 2px solid black;
+    padding: 10px 0;
+  }
+
+  #lien_header a {
+    display: block;
+    padding: 10px;
+  }
+
+  #lien_header.active {
+    display: flex;
+  }
 }
